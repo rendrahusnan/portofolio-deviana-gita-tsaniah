@@ -52,9 +52,9 @@ The experience contributed to the development of **cross-cultural communication,
 ```text
 portfolio-deviana-gita-tsaniah/
 │
-├── index.html
-├── README.md
+├── assets/
+│   ├── foto.jpg
+│   └── jurnal.pdf
 │
-└── assets/
-    ├── foto.jpg
-    └── jurnal.pdf
+├── index.html
+└── README.md
