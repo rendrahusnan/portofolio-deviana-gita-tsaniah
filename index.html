@@ -1,0 +1,1261 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Standalone offline version: no external fonts, images, CSS, or JS required. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Deviana Gita Tsaniah | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #f8f5ef;
+            color: #242321;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(248, 245, 239, 0.82);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(222, 216, 204, 0.7);
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+ 
+        .eyebrow {
+            color: #9b654d;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #716d65;
+        }
+
+        nav a:hover {
+            color: #9b654d;
+        }
+
+        .menu {
+            display: none;
+            border: 0;
+            background: none;
+            font-size: 24px;
+        }
+
+        .hero {
+            min-height: 92vh;
+
+            display: grid;
+            grid-template-columns: 1.1fr 9fr;
+
+            align-items: center;
+
+            gap: 10%;
+
+            padding: 100px 9% 80px;
+        }
+
+        .eyebrow {
+            margin-bottom: 12px;
+
+            color: #9b654d;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(52px, 7vw, 90px);
+            line-height: 0.98;
+            margin: 0;
+            letter-spacing: -3px;
+            font-weight: 700;
+        }
+
+        h1 em {
+            color: #9b654d;
+        }
+
+        .lead {
+            max-width: 590px;
+            color: #716d65;
+            margin: 28px 0 32px;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+
+            background: #9b654d;
+            color: white;
+            
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+            
+            text-decoration: none;
+
+            box-shadow: 0 8px 20px rgba(155, 101, 77, 0.18);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            background: #87553f;
+
+            box-shadow: 0 12px 28px rgba(155, 101, 77, 0.25);
+        }
+
+        .journal-btn:hover {
+            cursor: pointer;
+            background: #9b654d;
+            transform: translateY(-2px);
+        }
+
+        #journalViewer {
+            display: none;
+            width: 100%;
+            height: 80vh;
+            border: 1px solid #ded8cc;
+            margin-top: 30px;
+            border-radius: 18px;
+            background: #fffdf9;
+        }
+
+        .journal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+        
+        .journal-actions .journal-btn {
+            margin-top: 0;
+        }
+          /* Tombol utama */
+        .journal-actions .journal-btn:first-child {
+            background: #9b654d;
+            color: #fff;
+        }
+      
+        /* Tombol sekunder */
+        .journal-actions .browser-btn {
+            background: transparent;
+            color: #9b654d;
+            border: 1px solid #9b654d;
+        }
+
+        /* Hover tombol utama */
+        .journal-actions .journal-btn:first-child:hover {
+            background: #7f503d;
+            color: #fff;
+        }
+
+        /* Hover tombol sekunder */
+        .journal-actions .browser-btn:hover {
+            background: #9b654d;
+            color: #fff;
+        }
+
+        .photo {
+            position: relative;
+            max-width: 390px;
+            width: 100%;
+            justify-self: center;
+
+            perspective: 1000px;
+        }
+
+        .photo-box {
+            aspect-ratio: 4/5;
+            border-radius: 180px 180px 20px 20px;
+
+            background: linear-gradient(145deg, #d8c7b8, #eee6dc);
+            display: grid;
+
+            place-items: center;
+            text-align: center;
+
+            color: #806e60;
+
+            font-weight: 700;
+            letter-spacing: 3px;
+
+            overflow: hidden;
+            position: relative;
+
+            box-shadow:
+                0 20px 35px rgba(0, 0, 0, 0.16),
+                0 8px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-box img.loaded {
+            display: block;
+        }
+
+        .photo-box #photoFallback {
+            position: absolute;
+        }
+
+        .card {
+            position: absolute;
+
+            right: -20px;
+            bottom: 5px;
+
+            background: #fffdf9;
+
+            padding: 17px 20px;
+
+            border: 1px solid #ded8cc;
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, 0.08),
+                0 20px 40px rgba(0, 0, 0, 0.10);
+
+            display: grid;
+
+            gap: 4px;
+
+            transform: translateZ(40px);
+
+            transition: 
+                transform 0.3s ease, 
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) translateZ(50px);
+            box-shadow:
+                0 12px 18px rgba(0, 0, 0, 0.08),
+                0 25px 40px rgba(0, 0, 0, 0.14),
+                0 35px 60px rgba(0, 0, 0, 0.10);
+        }
+
+        .card small,
+        small {
+            color: #716d65;
+        }
+
+        .section {
+            padding: 100px 9%;
+        }
+
+        .tint {
+            background: #eee8de;
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 10%;
+            align-items: start;
+        }
+
+        h2 {
+            font-size: clamp(31px, 4vw, 48px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 23px;
+            line-height: 1.25;
+        }
+
+        .text {
+            color: #716d65;
+            max-width: 650px;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .text p + p {
+            margin-top: 16px;
+        }
+
+        .box {
+            background: rgba(255, 253, 249, 0.75);
+            border: 1px solid #ded8cc;
+            border-radius: 16px;
+
+            padding: 24px 26px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.04);
+                
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        box:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.08);
+
+            border-color: #cfc2b5;
+        }
+
+        .box h3 {
+            margin: 0 0 8px;
+            font-size: 21px;
+            line-height: 1.3;
+            color: #302d29;
+        }
+
+        .box small {
+            display: block;
+            color: #9b654d;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 14px;
+        }
+
+        .box > b {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #9b654d;
+        }
+
+        .box li {
+            color: #716d65;
+            margin: 7px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eee7dc;
+            color: #754938;
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 28px;
+
+            padding: 32px;
+
+            align-items: start;
+        }
+
+        .project > strong {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 42px;
+            line-height: 1;
+
+            color: #9b654d;
+
+            opacity: 0.7;
+
+            letter-spacing: -1px;
+        }
+
+        .project h3 {
+            max-width: 700px;
+            margin-bottom: 14px;
+        }
+
+        .project > div > p:last-child {
+            max-width: 720px;
+
+            color: #716d65;
+
+            line-height: 1.8;
+
+            margin-bottom: 0;
+        }
+
+        .project .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .project p:not(.eyebrow) {
+            color: #716d65;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .chips span {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 8px 12px;
+
+            border: 1px solid #ded8cc;
+            border-radius: 999px;
+
+            background: #f7f3ed;
+
+            color: #5f5a53;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            line-height: 1.2;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .edu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .edu > strong {
+            font-family: "Playfair Display";
+            font-size: 42px;
+            color: #9b654d;
+        }
+
+        .edu > strong small {
+            font-size: 16px;
+        }
+
+        .contact {
+            padding: 110px 9%;
+            background: #242321;
+            color: #fff;
+        }
+
+        .contact h2 {
+            font-size: clamp(38px, 6vw, 68px);
+            max-width: 850px;
+        }
+
+        .contact > p:not(.eyebrow) {
+            color: #bbb6ad;
+            max-width: 650px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 28px;
+            color: #eee8de;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            color: #d7a58e;
+        }
+
+        footer {
+            padding: 20px 9%;
+            display: flex;
+            justify-content: space-between;
+            background: #1c1b19;
+            color: #aaa;
+            font-size: 11px;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 6%;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 62px;
+                left: 0;
+                right: 0;
+
+                padding: 18px 6%;
+
+                background: #fffdf9;
+
+                flex-direction: column;
+
+                z-index: 1000;
+
+                box-shadow: 
+                    0 10px 25px rgba(0, 0, 0, 0.06);
+            }
+
+            nav a {
+                padding: 12px 0;
+            }
+
+            nav a:hover {
+                color: #9b654d;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 65px 6% 80px;
+                
+            }
+
+            .photo {
+                width: 82%;
+                max-width: 360px;
+                margin: 0 auto;
+            }
+
+            #journalViewer {
+                height: 70vh;
+                margin-top: 24px;
+                border-radius: 14px;
+            }
+
+            .section,
+            .contact {
+                padding: 75px 6%;
+                overflow: hidden;
+            }
+
+            .two,
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .skills {
+                gap: 16px;
+            }
+
+            .skills .box{
+                padding: 20px;
+            }
+
+            .chips {
+                gap: 7px;
+            }
+            
+            .chips span {
+                padding: 7px 10px;
+                font-size: 11px;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .card {
+                right: -5px;
+                bottom: 5px;
+                padding: 14px 16px;
+            }
+
+            .edu {
+                align-items: flex-start;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            footer {
+                padding: 18px 6%;
+            }
+
+            #experience .box {
+                width: 100%;
+            }
+
+        }
+        @media (max-width: 600px) {
+
+            header {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .hero {
+                padding: 50px 5% 65px;
+                gap: 42px;
+                text-align: center;
+            }
+
+            .hero .lead {
+                font-size: 14px;
+                line-height: 1.75;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero .btn {
+                display: inline-block;
+                padding: 12px 20px;
+                margin-top: 8px;
+            }
+
+            .hero h1 {
+                font-size: clamp(38px, 12vw, 54px);
+                line-height: 1.05;
+                margin-bottom: 18px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            .photo {
+                width: 88%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .card {
+                right: -2px;
+                bottom: 0;
+                padding: 12px 14px;
+                box-shadow:
+                     0 12px 30px rgba(0, 0, 0, 0.10),
+                     0 3px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            #journalViewer {
+                height: 65vh;
+                margin-top: 20px;
+                border-radius: 12px;
+            }
+
+            .journal-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .journal-actions .journal-btn {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+
+            .section,
+            .contact {
+                padding: 65px 5%;
+            }
+
+            h2 {
+                font-size: clamp(29px,10vw, 38px);
+                line-height: 1.1;
+            }
+
+            #experience .box {
+                padding: 22px 20px;
+            }
+
+            #experience .box h3 {
+                font-size: 19px;
+                line-height: 1.35;
+                margin: 10px 0 6px;
+            }
+
+            #experience .box ul {
+                padding-left: 20px;
+                margin-top: 18px;
+            }
+
+            #experience .box li {
+                font-size: 14px;
+                line-height: 1.7;
+                margin-bottom: 10px;
+            }
+
+            .box {
+                padding: 20px;
+                border-radius: 14px;
+            }
+
+            .project {
+                padding: 20px;
+                gap: 16px;
+            }
+
+            .project > strong {
+                font-size: 32px;
+            }
+
+            .ptoject h3 {
+                font-size: 19px;
+            }
+
+            .project > div > p:last-child {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            .two .box {
+                padding: 22px 20px;
+            }
+
+            .two .box h3 {
+                font-size: 20px;
+                margin-bottom: 14px;
+            }
+
+            .two .box p {
+                line-height: 1.75;
+            }
+
+            .chips span {
+                padding: 7px 9px;
+                font-size: 11px;
+            }
+
+            footer {
+                padding: 16px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <button class="menu"></button>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+
+        <div>
+            <p class="eyebrow">ENGLISH LITERATURE GRADUATE</p>
+
+            <h1>
+                Deviana Gita<br>
+                <em>Tsaniah.</em>
+            </h1>
+
+            <p class="lead">
+                Administrative Staff with experience in administrative support, data entry,
+                document preparation, customer service, passport services, and content creation.
+            </p>
+
+            <a class="btn" href="#contact">Let's Connect</a>
+        </div>
+
+
+        <div class="photo">
+
+            <div class="photo-box">
+                <img
+                    src="assets/foto.jpg"
+                    alt="Deviana Gita Tsaniah">
+                >
+            </div>
+
+            <div class="card">
+                <b>GPA 3.85/4.00</b>
+                <small>Ahmad Dahlan University</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="about" class="section two">
+
+        <div>
+            <p class="eyebrow"> ABOUT</p>
+
+            <h2>
+                A detail-oriented professional who values accuracy and communication.
+            </h2>
+        </div>
+
+        <div class="text">
+
+            <p>
+                English Literature graduate from Universitas Ahmad Dahlan with a GPA of 3.85
+                and internship experience at the Immigration Office Class I Non-TPI Pemalang.
+            </p>
+
+            <p>
+                Experienced in administrative support, data entry, document preparation,
+                customer service, passport services, and content creation. Proficient in
+                Indonesian and English, with strong communication, organizational, analytical,
+                and problem-solving skills.
+            </p>
+
+            <p>
+                Able to work independently and collaboratively, adapt to new environments,
+                and handle administrative tasks accurately and responsibly.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="experience" class="section tint">
+
+        <p class="eyebrow"> EXPERIENCE</p>
+
+        <h2>Professional Experience</h2>
+
+        <div class="box">
+
+            <b>INTERNSHIP</b>
+
+            <div>
+
+                <h3>Kantor Imigrasi Kelas I Non-TPI Pemalang</h3>
+
+                <small>Internship Student</small>
+
+                <ul>
+                    <li>
+                        Assisted with administrative tasks, document preparation,
+                        and official correspondence.
+                    </li>
+
+                    <li>
+                        Performed data entry and data management accurately and systematically.
+                    </li>
+
+                    <li>
+                        Assisted immigration services, including passport retrieval
+                        and customer service.
+                    </li>
+
+                    <li>
+                        Communicated professionally with Indonesian and foreign citizens
+                        in Indonesian and English.
+                    </li>
+
+                    <li>
+                        Supported digital content and promotional materials
+                        for immigration services.
+                    </li>
+
+                    <li>
+                        Developed skills in administration, document management,
+                        public service, communication, and teamwork.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="research" class="section">
+
+        <p class="eyebrow"> RESEARCH</p>
+
+        <h2>Research & Publication</h2>
+
+     <div class="box">
+
+        <span class="badge">
+                SINTA 3 INDEXED JOURNAL
+        </span>
+
+        <h3>
+            Social Class Inequality Depicted in Children Picture Book
+            <i>The Rich Man and the Monkey</i>
+            by Idries Shah: Genetic Structuralism Lucien Goldmann's Perspective
+        </h3>
+
+        <div class="journal-actions">
+
+        <a
+            href="assets/jurnal.pdf"
+            target="_blank"
+            rel="noopener"
+            class="journal-btn"
+            onclick="viewJournal(event)">
+
+            View Journal PDF
+
+        </a>
+
+
+        <a
+            href="assets/jurnal.pdf"
+            target="_blank"
+            rel="noopener"
+            class="journal-btn browser-btn">
+
+            Open PDF in Browser
+
+        </a>
+
+
+        <a
+            href="assets/jurnal.pdf"
+            download
+            class="journal-btn browser-btn">
+
+            Download Journal PDF
+
+        </a>
+
+        <iframe
+            id="journalViewer"
+            title="Journal PDF">
+        </iframe>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects" class="section tint">
+
+        <p class="eyebrow">PROJECT</p>
+
+        <h2>Selected Project</h2>
+
+        <div class="box project">
+
+            <strong>01</strong>
+
+            <div>
+
+                <p class="eyebrow">INTERNATIONAL PROJECT</p>
+
+                <h3>
+                    Halal Tourism and Cultural Exchange Project-Japan
+                </h3>
+
+                <p>
+                    Participated in activities introducing Indonesian culture and halal tourism
+                    to Japanese communities. Developed cross-cultural communication and teamwork
+                    skills through international activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="skills" class="section">
+
+        <p class="eyebrow"> SKILLS</p>
+
+        <h2>Skills & Capabilities</h2>
+
+        <div class="skills">
+
+            <div class="box">
+
+                <h3>Hard Skills</h3>
+
+                <div class="chips">
+                    <span>Microsoft Office</span>
+                    <span>Administrative Management</span>
+                    <span>Data Entry</span>
+                    <span>Document Management</span>
+                    <span>Data Management</span>
+                    <span>Customer Service</span>
+                    <span>English Translation</span>
+                    <span>Official Correspondence</span>
+                    <span>Content Creation</span>
+                    <span>Presentation Skills</span>
+                </div>
+
+            </div>
+
+
+            <div class="box">
+
+                <h3>Soft Skills</h3>
+
+                <div class="chips">
+                    <span>Communication</span>
+                    <span>Time Management</span>
+                    <span>Attention to Detail</span>
+                    <span>Problem Solving</span>
+                    <span>Critical Thinking</span>
+                    <span>Teamwork</span>
+                    <span>Adaptability</span>
+                    <span>Responsibility</span>
+                    <span>Public Speaking</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section tint">
+
+        <p class="eyebrow"> EDUCATION</p>
+
+        <h2>Academic Background</h2>
+
+        <div class="box edu">
+
+            <div>
+
+                <p class="eyebrow">2022-2026</p>
+
+                <h3>Bachelor of English Literature</h3>
+
+                <p>
+                    Ahmad Dahlan University, Yogyakarta
+                </p>
+
+            </div>
+
+            <strong>
+                3.85
+                <small>/4.00</small>
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="contact">
+
+        <p class="eyebrow">CONTACT</p>
+
+        <h2>
+            Let's create something meaningful together.
+        </h2>
+
+        <p>
+            Available for administrative, communication, customer service,
+            and related professional opportunities.
+        </p>
+
+        <div class="links">
+
+            <a href="mailto:devianatata134@gmail.com">
+                devianatata134@gmail.com
+            </a>
+
+            <a href="tel:+6287761053332">
+                +62 877-6105-3332
+            </a>
+
+            <span>
+                Pemalang, Jawa Tengah
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+         2026 Deviana Gita Tsaniah
+        <span>Personal Portfolio</span>
+    </footer>
+
+
+    <script>
+
+        const menu = document.querySelector('.menu'),
+            nav = document.querySelector('nav');
+
+        menu.addEventListener('click', () =>
+            nav.classList.toggle('open')
+        );
+
+        document.querySelectorAll('nav a').forEach(a =>
+            a.addEventListener('click', () =>
+                nav.classList.remove('open')
+            )
+        );
+
+
+        const profilePhoto = document.getElementById('profilePhoto');
+        const photoFallback = document.getElementById('photoFallback');
+        const photo = document.querySelector('.photo');
+        const photoBox = document.querySelector('.photo-box');
+        const card = document.querySelector('.card');
+
+        photo.addEventListener('mousemove', function(e) {
+
+            const rect = photo.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateY = (x - centerX) / 20;
+            const rotateX = (centerY -y) / 20;
+
+            photoBox.style.transform =
+                `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            card.style.transform =
+                `translateZ(40px) rotateX(${rotateX * 0.5}deg) rotateY(${rotateY * 0.5}deg)`;
+
+        });
+
+        photo.addEventListener(`mouseleave`, function(){
+
+            photoBox.style.transform =
+                `rotateX(0deg) rotateY(0deg)`;
+
+            card.style.transform =
+                `translate(0)`;
+        });
+
+        if (profilePhoto) {
+
+            profilePhoto.addEventListener('load', () => {
+
+                profilePhoto.classList.add('loaded');
+
+                if (photoFallback)
+                    photoFallback.style.display = 'none';
+
+            });
+
+            profilePhoto.addEventListener('error', () => {
+
+                profilePhoto.classList.remove('loaded');
+
+                if (photoFallback)
+                    photoFallback.style.display = 'block';
+
+            });
+
+        }
+
+    </script>
+
+<script>
+
+function viewJournal(event) {
+
+    const isMobile =
+        /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+
+        // Biarkan browser membuka PDF di tab baru
+        return;
+
+    }
+
+    // Desktop: jangan buka tab baru
+    event.preventDefault();
+
+    const link = event.currentTarget;
+    const pdfUrl = link.href;
+
+    const frame = document.getElementById('journalViewer');
+
+    frame.src = pdfUrl;
+    frame.style.display = 'block';
+
+    frame.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+</script></body>
+
+</html>
