@@ -4,40 +4,49 @@ A personal portfolio website created to showcase Deviana Gita Tsaniah's academic
 
 The website brings together different parts of her journey in one place, from her education and professional capabilities to her international experience and academic research.
 
-About
+## About
 
 This portfolio presents:
 
-Education and academic background
-Hard skills and soft skills
-International project experience
-Research and publication
-Selected experiences and achievements
+- **Education and academic background**
+- **Hard skills and soft skills**
+- **International project experience**
+- **Research and publication**
+- **Selected experiences and achievements**
 
 The website was designed with a clean, simple, and responsive interface so it can be comfortably viewed on both desktop and mobile devices.
 
-Research & Publication
+## Research & Publication
 
 The portfolio includes her research publication:
 
-Social Class Inequality Depicted in Children Picture Book The Rich Man and the Monkey by Idries Shah: Genetic Structuralism Lucien Goldmann's Perspective
+**Social Class Inequality Depicted in Children Picture Book *The Rich Man and the Monkey* by Idries Shah: Genetic Structuralism Lucien Goldmann's Perspective**
 
-The journal is available directly through the website with options to view, open, and download the PDF.
+The journal is available directly through the website with options to:
 
-Featured Project
-Halal Tourism and Cultural Exchange Project — Japan
+- **View the Journal PDF**
+- **Open the PDF in Browser**
+- **Download the Journal PDF**
+
+## Featured Project
+
+### Halal Tourism and Cultural Exchange Project — Japan
 
 An international project involving activities related to Indonesian culture and halal tourism in Japanese communities.
 
-The experience contributed to the development of cross-cultural communication, teamwork, and adaptability in an international environment.
+The experience contributed to the development of **cross-cultural communication, teamwork, adaptability, and international collaboration**.
 
-Built With
-HTML5
-CSS3
-JavaScript
-GitHub
-GitHub Pages
-Project Structure
+## Built With
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **GitHub**
+- **GitHub Pages**
+
+## Project Structure
+
+```text
 portfolio-deviana-gita-tsaniah/
 │
 ├── index.html
@@ -46,12 +55,3 @@ portfolio-deviana-gita-tsaniah/
 └── assets/
     ├── foto.jpg
     └── jurnal.pdf
-Live Portfolio
-
-View Deviana Gita Tsaniah's Portfolio
-
-Note
-
-This portfolio is a living project and may continue to grow as new experiences, projects, and achievements become part of her journey.
-
-Portfolio of Deviana Gita Tsaniah
