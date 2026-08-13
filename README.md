@@ -4,6 +4,10 @@ A personal portfolio website created to showcase Deviana Gita Tsaniah's academic
 
 The website brings together different parts of her journey in one place, from her education and professional capabilities to her international experience and academic research.
 
+## 🌐 Live Portfolio
+
+**[View Portfolio Website](https://rendrahusnan.github.io/portofolio-deviana-gita-tsaniah/)**
+
 ## About
 
 This portfolio presents:
