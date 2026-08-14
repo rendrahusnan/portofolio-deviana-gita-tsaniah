@@ -1,44 +1,42 @@
 # Deviana Gita Tsaniah — Personal Portfolio
 
-A personal portfolio website created to showcase Deviana Gita Tsaniah's academic background, skills, experiences, projects, and research publication.
+This is the personal portfolio website of Deviana Gita Tsaniah.
 
-The website brings together different parts of her journey in one place, from her education and professional capabilities to her international experience and academic research.
+The website contains information about her education, skills, work experience, projects, and academic research. It was created as a place to present her background and experience in a simple and easy-to-navigate way.
 
-## 🌐 Live Portfolio
+## 🌐 Live Website
 
 **[View Portfolio Website](https://rendrahusnan.github.io/portofolio-deviana-gita-tsaniah/)**
 
 ## About
 
-This portfolio presents:
+This portfolio includes:
 
-- **Education and academic background**
-- **Hard skills and soft skills**
-- **International project experience**
-- **Research and publication**
-- **Selected experiences and achievements**
+- Education and academic background
+- Work and administrative experience
+- Skills and areas of interest
+- International project experience
+- Research and publication
+- Selected projects
+- Contact information
 
-The website was designed with a clean, simple, and responsive interface so it can be comfortably viewed on both desktop and mobile devices.
+The design is kept simple and clean, with a responsive layout that works across desktop, tablet, and mobile devices.
 
 ## Research & Publication
 
-The portfolio includes her research publication:
+One of the main parts of this portfolio is an academic research publication:
 
 **Social Class Inequality Depicted in Children Picture Book *The Rich Man and the Monkey* by Idries Shah: Genetic Structuralism Lucien Goldmann's Perspective**
 
-The journal is available directly through the website with options to:
-
-- **View the Journal PDF**
-- **Open the PDF in Browser**
-- **Download the Journal PDF**
+The research paper can be accessed directly from the website. Visitors can read it in the browser or download the PDF.
 
 ## Featured Project
 
 ### Halal Tourism and Cultural Exchange Project — Japan
 
-An international project involving activities related to Indonesian culture and halal tourism in Japanese communities.
+An international project related to Indonesian culture and halal tourism in Japan.
 
-The experience contributed to the development of **cross-cultural communication, teamwork, adaptability, and international collaboration**.
+This experience provided an opportunity to work with people from different cultural backgrounds and develop skills in communication, teamwork, adaptability, and collaboration.
 
 ## Built With
 
@@ -58,3 +56,4 @@ portfolio-deviana-gita-tsaniah/
 │
 ├── index.html
 └── README.md
+```
