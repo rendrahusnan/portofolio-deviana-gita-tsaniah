@@ -15,6 +15,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -23,6 +24,7 @@
             color: #242321;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
         a {
@@ -33,7 +35,7 @@
         header {
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
 
             display: flex;
             justify-content: space-between;
@@ -41,12 +43,35 @@
 
             padding: 18px 7%;
 
-            background: rgba(248, 245, 239, 0.82);
-            backdrop-filter: blur(14px);
+            background: rgba(247, 244, 238, 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
 
-            border-bottom: 1px solid rgba(222, 216, 204, 0.7);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition:
+                padding 0.3s ease,
+                background 0.3 ease,
+                box-shadow 0.3 ease,
+                border-color 0.3 ease;
+        }
+
+        header.scrolled {
+            padding-top: 11px;
+            padding-bottom: 11px;
+
+            background: rgba(247, 244, 238, 0.97);
+
+            border-bottom-color: rgba(0, 0, 0, 0.10);
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.07);
+            
+            transition:
+                padding 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
         }
 
         h1, h2, h3 {
@@ -65,8 +90,38 @@
             color: #716d65;
         }
 
+        nav a {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: #9b654d;
+            transition: width 0.25s ease;
+        }
+
         nav a:hover {
             color: #9b654d;
+        }
+
+        nav a:active {
+            color: #9b654d;
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         .menu {
@@ -89,6 +144,24 @@
             padding: 100px 9% 80px;
         }
 
+        .hero-content {
+            animation: heroContentIn 0.8s ease both;
+        }
+
+        @keyframes heroContentIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+
         .eyebrow {
             margin-bottom: 12px;
 
@@ -99,6 +172,22 @@
 
             letter-spacing: 1.8px;
             text-transform: uppercase;
+        }
+
+        .photo {
+            animation: heroPhotoIn 0.9s ease 0.15s both;
+        }
+
+        @keyframes heroPhotoIn {
+            from {
+                opacity: 0;
+                scale: 0.97;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
         }
 
         h1 {
@@ -293,6 +382,158 @@
 
         .section {
             padding: 100px 9%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-card {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .experience-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-card:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .experience-card:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .experience-card:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .research-card {
+            opacity: 0;
+            transform: translateY(22px);
+            transition:
+                opacity 0.65s ease,
+                transform 0.65s ease;
+        }
+
+        .research-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.65s ease,
+                transform 0.65s ease;
+        }
+
+        .project-card.show {
+            opacity: 1;
+             transform: translateY(0);
+        }
+
+        .project-card:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .project-card:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .project-card:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .skill-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .skill-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-card:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .skill-card:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+
+        .skill-card:nth-child(3) {
+            transition-delay: 0.19s;
+        }
+
+        .skill-card:nth-child(4) {
+            transition-delay: 0.26s;
+        }
+
+        .education-card {
+            opacity: 0;
+            transform: translateY(22px);
+            transition:
+                opacity 0.65s ease,
+                transform 0.65s ease;
+        }
+
+        .education-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .education-card:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .education-card:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .education-card:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .contact-title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .contact.show .contact-title,
+        .contact.show .contact-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-links {
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+                opacity 0.7s ease 0.15s,
+                transform 0.7s ease 0.15s;
         }
 
         .tint {
@@ -510,13 +751,52 @@
         .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 28px;
+            gap: 14px;
+            margin-top: 32px;
             color: #eee8de;
             font-size: 14px;
         }
 
+        .links a,
+        .links span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+
+            padding: 10px 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            color: #eee8de;
+
+            text-decoration: none;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+            
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
         .links a:hover {
-            color: #d7a58e;
+            color: #fff;
+            background: rgba(155, 101, 77, 0.25);
+            border-color: #9b654d;
+            transform: translateY(-2px);
+        }
+
+        .links a:active {
+            color: #fff;
+            background: #9b654d;
+            border-color: #9b654d;
+            transform: scale(0.96);
+        }
+
+        .links span {
+            color: #bbb6ad;
         }
 
         footer {
@@ -533,39 +813,145 @@
                 padding: 15px 6%;
             }
 
+            header.scrolled {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            html,
+            body {
+                overflow-x: clip;
+                overscroll-behavior-x: none;
+                touch-action: pan-y;
+            }
+
+            img,
+            iframe,
+            video {
+                max-width: 100%;
+            }
+        
             .menu {
                 display: block;
+                margin-left: auto;
+                cursor: pointer;
+                font-size: 18px;
             }
 
             nav {
-                display: none;
+                display: flex;
                 position: absolute;
-                top: 62px;
-                left: 0;
-                right: 0;
+                top: 60px;
+                left: auto;
+                right: 3%;
 
-                padding: 18px 6%;
+                width: 140px;
+                padding: 8px 10px;
 
-                background: #fffdf9;
+                background: #fcf9f4;
 
                 flex-direction: column;
+                gap: 2px;
+
+                border: 1px solid #ded8cc;
+                border-radius: 12px;
 
                 z-index: 1000;
 
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(25px);
+
+                pointer-events: none;
+
                 box-shadow: 
-                    0 10px 25px rgba(0, 0, 0, 0.06);
+                    0 12px 30px rgba(0, 0, 0, 0.10),
+                    0 3px 8px rgba(0, 0, 0, 0.05);
+                    
+
+                transition:
+                    opacity 0.25s ease,
+                    transform 0.25s ease,
+                    visibility 0.25s ease;
+            
             }
 
             nav a {
-                padding: 12px 0;
+                font-size: 11px;
+                display: block;
+                padding: 10px 12px;
+                border-radius: 7px;
+
+                opacity: 0;
+                transform: translateY(-6px);
+
+                transition:
+                    opacity 0.2s ease,
+                    transform 0.2s ease,
+                    color 0.2s ease,
+                    background 0.2s ease;
+
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
             }
 
             nav a:hover {
                 color: #9b654d;
             }
 
+            nav a:active {
+                color: #9b654d;
+                background: rgba(155, 101, 77, 0.12);
+                transform: scale(0.97);
+            }
+
+            nav a.active {
+                color: #9b654d;
+                background: rgba(155, 101, 77, 0.10);
+            }
+
+            nav a.active::after {
+                width: 0;
+            }
+
             nav.open {
-                display: flex;
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            nav.open a {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            nav.open a:nth-child(1) {
+                transition-delay: 0.05s;
+            }
+
+            nav.open a:nth-child(2) {
+                transition-delay: 0.10s;
+            }
+
+            nav.open a:nth-child(3) {
+                transition-delay: 0.15s;
+            }
+
+            nav.open a:nth-child(4) {
+                transition-delay: 0.20s;
+            }
+
+            nav.open a:nth-child(5) {
+                transition-delay: 0.25s;
+            }
+
+            nav.open a:nth-child(6) {
+                transition-delay: 0.30s;
+            }
+
+            nav.open a:nth-child(7) {
+                transition-delay: 0.35s;
             }
 
             .hero {
@@ -622,7 +1008,7 @@
             }
 
             .card {
-                right: -5px;
+                right: 15;
                 bottom: 5px;
                 padding: 14px 16px;
             }
@@ -646,6 +1032,11 @@
 
             header {
                 padding: 14px 5%;
+            }
+
+            header.scrolled {
+                padding-top: 9px;
+                padding-bottom: 9px;
             }
 
             .logo {
@@ -791,6 +1182,26 @@
             footer {
                 padding: 16px 5%;
             }
+
+             .contact {
+                padding: 80px 7%;
+            }
+
+            .contact h2 {
+                font-size: clamp(34px, 10vw, 48px);
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .links a,
+            .links span {
+                justify-content: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -798,7 +1209,7 @@
 <body>
 
     <header>
-        <button class="menu"></button>
+        <button class="menu">☰ Menu</button>
 
         <nav>
             <a href="#home">Home</a>
@@ -814,7 +1225,7 @@
 
     <section id="home" class="hero">
 
-        <div>
+        <div class="hero-content">
             <p class="eyebrow">ENGLISH LITERATURE GRADUATE</p>
 
             <h1>
@@ -850,7 +1261,7 @@
     </section>
 
 
-    <section id="about" class="section two">
+    <section id="about" class="section two reveal">
 
         <div>
             <p class="eyebrow"> ABOUT</p>
@@ -884,13 +1295,13 @@
     </section>
 
 
-    <section id="experience" class="section tint">
+    <section id="experience" class="section tint reveal">
 
         <p class="eyebrow"> EXPERIENCE</p>
 
         <h2>Professional Experience</h2>
 
-        <div class="box">
+        <div class="box experience-card">
 
             <b>INTERNSHIP</b>
 
@@ -938,13 +1349,13 @@
     </section>
 
 
-    <section id="research" class="section">
+    <section id="research" class="section reveal">
 
         <p class="eyebrow"> RESEARCH</p>
 
         <h2>Research & Publication</h2>
 
-     <div class="box">
+     <div class="box research-card">
 
         <span class="badge">
                 SINTA 3 INDEXED JOURNAL
@@ -1000,13 +1411,13 @@
     </section>
 
 
-    <section id="projects" class="section tint">
+    <section id="projects" class="section tint reveal">
 
         <p class="eyebrow">PROJECT</p>
 
         <h2>Selected Project</h2>
 
-        <div class="box project">
+        <div class="box project project-card">
 
             <strong>01</strong>
 
@@ -1031,7 +1442,7 @@
     </section>
 
 
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
 
         <p class="eyebrow"> SKILLS</p>
 
@@ -1039,7 +1450,7 @@
 
         <div class="skills">
 
-            <div class="box">
+            <div class="box skill-card">
 
                 <h3>Hard Skills</h3>
 
@@ -1082,13 +1493,13 @@
     </section>
 
 
-    <section class="section tint">
+    <section class="section tint reveal">
 
         <p class="eyebrow"> EDUCATION</p>
 
         <h2>Academic Background</h2>
 
-        <div class="box edu">
+        <div class="box edu education-card">
 
             <div>
 
@@ -1112,12 +1523,12 @@
     </section>
 
 
-   <section id="contact" class="contact">
+   <section id="contact" class="contact reveal">
 
         <p class="eyebrow">CONTACT</p>
 
-        <h2>
-            Let's create something meaningful together.
+        <h2 class="contact-title">
+        Let's create something meaningful together.
         </h2>
 
         <p>
@@ -1125,7 +1536,7 @@
             and related professional opportunities.
         </p>
 
-        <div class="links">
+        <div class="links contact-links">
 
             <!-- Ini kode untuk mencantumkan Gmail -->
             <a
@@ -1165,27 +1576,132 @@
 
     <script>
 
-        const menu = document.querySelector('.menu'),
-            nav = document.querySelector('nav');
+    /* ===========================================
+       ini kode bagian dari HEADER SAAT SCROLL nya
+       =========================================== */
 
-        menu.addEventListener('click', () =>
-            nav.classList.toggle('open')
-        );
+    const header = document.querySelector("header");
 
-        document.querySelectorAll('nav a').forEach(a =>
-            a.addEventListener('click', () =>
-                nav.classList.remove('open')
-            )
-        );
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 30) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
 
 
-        const profilePhoto = document.getElementById('profilePhoto');
-        const photoFallback = document.getElementById('photoFallback');
-        const photo = document.querySelector('.photo');
-        const photoBox = document.querySelector('.photo-box');
-        const card = document.querySelector('.card');
+    /* =========================================
+          Ini bagian dari HAMBURGER MENU nya
+       ========================================= */
 
-        photo.addEventListener('mousemove', function(e) {
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector("nav");
+
+    menu.addEventListener("click", () => {
+        nav.classList.toggle("open");
+    });
+
+
+    /* Bagian untuk tutup menu setelah salah satu menu diklik */
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+        link.addEventListener("click", () => {
+            nav.classList.remove("open");
+        });
+
+    });
+
+
+    /* =============================================
+       Ini bagian dari ACTIVE NAVIGATION SAAT SCROLL 
+       ============================================ */
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                current = section.getAttribute("id");
+            }
+
+        });
+
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") === "#" + current
+            ) {
+                link.classList.add("active");
+            }
+
+        });
+
+    });
+
+        /* =========================================
+       ANIMASI SECTION SAAT MASUK LAYAR
+       ========================================= */
+
+    const revealElements = document.querySelectorAll(
+        ".reveal, .experience-card, .research-card, .project-card, .skill-card, .education-card"
+    );
+
+    const revealObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+
+            } else {
+                entry.target.classList.remove("show");
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach((element) => {
+        revealObserver.observe(element);
+    });
+
+
+    /* ================================
+       Bagian untuk kode FOTO PROFILE 
+       ================================ */
+
+    const profilePhoto = document.getElementById("profilePhoto");
+    const photoFallback = document.getElementById("photoFallback");
+    const photo = document.querySelector(".photo");
+    const photoBox = document.querySelector(".photo-box");
+    const card = document.querySelector(".card");
+
+
+    /* bagian kode script Efek 3D foto ketika mouse bergerak */
+
+    if (photo && photoBox && card) {
+
+        photo.addEventListener("mousemove", function(e) {
 
             const rect = photo.getBoundingClientRect();
 
@@ -1196,48 +1712,64 @@
             const centerY = rect.height / 2;
 
             const rotateY = (x - centerX) / 20;
-            const rotateX = (centerY -y) / 20;
+            const rotateX = (centerY - y) / 20;
+
 
             photoBox.style.transform =
                 `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
 
             card.style.transform =
                 `translateZ(40px) rotateX(${rotateX * 0.5}deg) rotateY(${rotateY * 0.5}deg)`;
 
         });
 
-        photo.addEventListener(`mouseleave`, function(){
+
+        /* bagian kode untuk Kembalikan foto ketika mouse keluar */
+
+        photo.addEventListener("mouseleave", function() {
 
             photoBox.style.transform =
-                `rotateX(0deg) rotateY(0deg)`;
+                "rotateX(0deg) rotateY(0deg)";
 
             card.style.transform =
-                `translate(0)`;
+                "translate(0)";
+
         });
 
-        if (profilePhoto) {
+    }
 
-            profilePhoto.addEventListener('load', () => {
 
-                profilePhoto.classList.add('loaded');
+    /* =========================================
+            FOTO BERHASIL / GAGAL DIMUAT
+       ========================================= */
 
-                if (photoFallback)
-                    photoFallback.style.display = 'none';
+    if (profilePhoto) {
 
-            });
+        profilePhoto.addEventListener("load", () => {
 
-            profilePhoto.addEventListener('error', () => {
+            profilePhoto.classList.add("loaded");
 
-                profilePhoto.classList.remove('loaded');
+            if (photoFallback) {
+                photoFallback.style.display = "none";
+            }
 
-                if (photoFallback)
-                    photoFallback.style.display = 'block';
+        });
 
-            });
 
-        }
+        profilePhoto.addEventListener("error", () => {
 
-    </script>
+            profilePhoto.classList.remove("loaded");
+
+            if (photoFallback) {
+                photoFallback.style.display = "block";
+            }
+
+        });
+
+    }
+
+</script>
 
 <script>
 
