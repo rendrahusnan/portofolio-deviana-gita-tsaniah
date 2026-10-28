@@ -12,7 +12,7 @@ const education = [
   {
     period: "2022 — 2026",
     degree: "Bachelor of English Literature",
-    institution: "Universitas [Nama Universitas]",
+    institution: "Universitas Ahmad Dahlan",
     description:
       "Mempelajari bahasa Inggris, sastra, komunikasi, serta analisis teks dan penelitian. Perjalanan akademik ini membantu mengembangkan kemampuan berpikir kritis, menulis, dan menyampaikan ide dengan jelas.",
     result: "GPA 3.85 / 4.00",
