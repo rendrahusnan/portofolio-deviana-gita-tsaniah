@@ -462,12 +462,6 @@ export default function Skills() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#ead9b9]/70 sm:text-base">
-            A combination of interpersonal abilities, professional
-            knowledge, and digital skills that support my academic
-            and professional journey.
-          </p>
-
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#b08a50]/40" />
 

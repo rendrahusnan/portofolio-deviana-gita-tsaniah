@@ -393,10 +393,6 @@ export default function Hero() {
               </p>
             </div>
 
-            <p className="mb-4 font-serif text-base italic text-[#C9A778] sm:text-lg">
-              A story written with intention
-            </p>
-
             <h1 className="font-serif text-5xl leading-[1.04] tracking-[-0.05em] text-[#F3E8D7] sm:text-6xl md:text-7xl xl:text-[5.7rem]">
               Deviana
               <span className="mt-2 block italic text-[#D4B277]">
@@ -415,10 +411,11 @@ export default function Hero() {
             </p>
 
             <p className="max-w-xl text-sm leading-8 text-[#E5D6C5]/90 sm:text-base sm:leading-9">
-              Lulusan Sastra Inggris dengan minat di bidang administrasi,
-              pengolahan data, riset, dan pelayanan publik. Terbiasa bekerja
-              secara teliti serta berkomunikasi dalam bahasa Indonesia dan
-              Inggris.
+              Lulusan S1 Sastra Inggris Universitas Ahmad Dahlan (IPK 3,85/4,00). 
+              Terampil dalam administrasi, entri dan pengolahan data, 
+              serta pelayanan publik dalam bahasa Indonesia dan Inggris. 
+              Berpengalaman dalam riset dan publikasi jurnal SINTA, 
+              serta siap berkontribusi melalui program MagangHub.
             </p>
 
             {/* Action buttons */}
@@ -442,23 +439,6 @@ export default function Hero() {
                 <Mail size={15} />
                 Hubungi Saya
               </a>
-            </div>
-
-            {/* Quote */}
-            <div className="mt-12 flex items-center gap-4">
-              <span className="font-serif text-3xl italic text-[#D6B878]">
-                “
-              </span>
-
-              <div>
-                <p className="font-serif text-sm italic tracking-wide text-[#E4D2B8] sm:text-base">
-                  Curious mind, thoughtful work.
-                </p>
-
-                <p className="mt-2 text-[9px] uppercase tracking-[0.2em] text-[#B89559]/80 sm:tracking-[0.28em]">
-                  A personal collection
-                </p>
-              </div>
             </div>
           </motion.div>
 

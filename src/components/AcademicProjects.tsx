@@ -209,10 +209,6 @@ export const AcademicProjects = () => {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-lg text-xs leading-6 text-[#c6b59b]/70 sm:text-sm">
-              A collection of academic research, cultural encounters,
-              and experiences that shaped a broader perspective.
-            </p>
           </div>
 
           <div className="flex items-center gap-4 md:flex-col md:items-end md:gap-2">
@@ -491,10 +487,6 @@ export const AcademicProjects = () => {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[8px] uppercase tracking-[0.2em] text-[#c6b59b]/55 sm:text-[9px]">
               Research · Culture · Communication
-            </p>
-
-            <p className="font-serif text-sm italic text-[#b08a50]">
-              Enduring knowledge, lasting impressions.
             </p>
 
             <p className="font-serif text-xs text-[#c6b59b]/50">

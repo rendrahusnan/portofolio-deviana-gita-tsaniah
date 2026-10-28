@@ -111,14 +111,9 @@ export default function Experience() {
           </div>
 
           <h2 className="font-serif text-5xl font-normal tracking-tight text-[#f1e4ce] sm:text-6xl md:text-8xl">
-            Pengalaman
+            Experience
             <span className="italic text-[#b89559]">.</span>
           </h2>
-
-          <p className="mx-auto mt-6 max-w-xl font-serif text-base italic leading-8 text-[#bba991] sm:text-lg">
-            Setiap perjalanan menyimpan cerita, setiap pengalaman meninggalkan
-            makna.
-          </p>
 
           <div className="mt-7 flex items-center justify-center gap-3">
             <span className="h-px w-12 bg-[#b89559]/50" />

@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   GraduationCap,
@@ -14,7 +13,7 @@ const education = [
     degree: "Bachelor of English Literature",
     institution: "Universitas Ahmad Dahlan",
     description:
-      "Mempelajari bahasa Inggris, sastra, komunikasi, serta analisis teks dan penelitian. Perjalanan akademik ini membantu mengembangkan kemampuan berpikir kritis, menulis, dan menyampaikan ide dengan jelas.",
+      "⁠Mempelajari bahasa Inggris, sastra, dan komunikasi melalui analisis teks serta penelitian, dengan ketertarikan pada kajian sastra dan budaya. Proses ini mengembangkan cara berpikir kritis, kemampuan menulis ilmiah, dan keterampilan menyampaikan gagasan secara jelas dan terstruktur.",
     result: "GPA 3.85 / 4.00",
     status: "Undergraduate Program",
   },
@@ -111,12 +110,6 @@ export default function Education() {
             Edu
             <span className="italic text-[#D4B277]">cation.</span>
           </h2>
-
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-[#DCCAB6]/75 sm:text-base">
-            Every chapter of learning shapes a new perspective, builds
-            character, and opens the door to new possibilities.
-          </p>
-
           <div className="mt-7 flex items-center justify-center gap-3">
             <span className="h-px w-12 bg-[#B89559]/60" />
             <Sparkles size={16} strokeWidth={1.2} className="text-[#D6B878]" />
@@ -308,11 +301,6 @@ export default function Education() {
           <span className="font-serif text-5xl leading-none text-[#B89559]/70">
             “
           </span>
-
-          <p className="-mt-1 font-serif text-xl italic leading-relaxed text-[#F1E4D0]/90 sm:text-2xl">
-            The beautiful thing about learning is that no one can take it away
-            from you.
-          </p>
 
           <div className="mt-6 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#B89559]/50" />

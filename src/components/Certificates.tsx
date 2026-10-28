@@ -12,6 +12,9 @@ import {
 
 import certificate1 from '../assets/certificate/Certificate1.jpeg';
 import certificate2 from '../assets/certificate/Certificate2.jpeg';
+import certificate3 from '../assets/certificate/Certificate3.jpeg';
+import certificate4 from '../assets/certificate/Certificate4.jpeg';
+
 
 const certificates = [
   {
@@ -26,7 +29,20 @@ const certificates = [
     image: certificate2,
     description: 'Dokumentasi sertifikat.',
   },
+  {
+    id: '03',
+    title: 'Sertifikat 3',
+    image: certificate3,
+    description: 'Dokumentasi sertifikat.',
+  },
+  {
+    id: '04',
+    title: 'Sertifikat 4',
+    image: certificate4,
+    description: 'Dokumentasi sertifikat.',
+  },
 ];
+
 
 export const Certificates = () => {
   const [selectedCertificate, setSelectedCertificate] =
@@ -140,18 +156,12 @@ export const Certificates = () => {
               </div>
 
               <h2 className="font-serif text-5xl font-normal leading-[1.05] tracking-tight text-[#f2e6d1] sm:text-6xl md:text-8xl">
-                A Mark of
+                My
                 <br />
                 <span className="italic text-[#c5a574]">
-                  Excellence.
+                  Certificate.
                 </span>
               </h2>
-
-              <p className="mt-6 max-w-lg text-sm leading-7 text-[#d0bda4]/75 md:text-base">
-                Setiap pencapaian adalah bagian dari perjalanan
-                untuk terus belajar, berkembang, dan memberikan
-                hasil yang lebih baik.
-              </p>
             </div>
 
             <div className="flex items-center justify-between border-y border-[#b08a50]/25 py-4 md:block md:border-y-0 md:border-l md:py-2 md:pl-6">
