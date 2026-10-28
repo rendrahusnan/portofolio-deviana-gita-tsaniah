@@ -1,87 +1,130 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { BookOpen} from 'lucide-react';
+import { BookOpen, ArrowUpRight } from 'lucide-react';
 
 const works = [
   {
-    id: "01",
-    title: "Publikasi Jurnal Ilmiah Bereputasi SINTA",
-    category: "RESEARCH & ACADEMIC WRITING",
-    description: "Melakukan riset mendalam, penyusunan naskah akademik, penyuntingan bahasa (proofreading), dan publikasi artikel ilmiah pada jurnal nasional terakreditasi SINTA.",
-    tags: ["Academic Research", "SINTA Journal", "Scientific Writing", "Proofreading"]
+    id: '01',
+    title: 'Publikasi Jurnal Ilmiah Bereputasi SINTA',
+    category: 'Research & Academic Writing',
+    description:
+      'Melakukan riset, menyusun naskah akademik, menyunting bahasa (proofreading), dan memublikasikan artikel ilmiah pada jurnal nasional terakreditasi SINTA.',
+    tags: [
+      'Academic Research',
+      'SINTA Journal',
+      'Scientific Writing',
+      'Proofreading',
+    ],
   },
   {
-    id: "02",
-    title: "Studi Lintas Budaya & Wisata Halal Jepang",
-    category: "INTERNATIONAL PROJECT",
-    description: "Menyusun laporan komprehensif dan riset terkait perkembangan sektor wisata halal serta komunikasi lintas budaya selama program di Jepang.",
-    tags: ["Cross-Cultural Study", "Halal Tourism", "Bilingual Report"]
+    id: '02',
+    title: 'Studi Lintas Budaya & Wisata Halal Jepang',
+    category: 'International Project',
+    description:
+      'Menyusun laporan dan melakukan riset terkait perkembangan sektor wisata halal serta komunikasi lintas budaya selama program di Jepang.',
+    tags: ['Cross-Cultural Study', 'Halal Tourism', 'Bilingual Report'],
   },
   {
-    id: "03",
-    title: "International Academic Visit Report",
-    category: "DIPLOMACY & FIELD STUDY",
-    description: "Dokumentasi dan penyusunan laporan kunjungan kerja sama internasional bersama Kedutaan Besar Republik Indonesia (KBRI) di Singapura.",
-    tags: ["International Relations", "Documentation", "Public Communication"]
-  }
+    id: '03',
+    title: 'International Academic Visit Report',
+    category: 'Diplomacy & Field Study',
+    description:
+      'Mendokumentasikan kegiatan dan menyusun laporan kunjungan akademik internasional bersama Kedutaan Besar Republik Indonesia (KBRI) di Singapura.',
+    tags: [
+      'International Relations',
+      'Documentation',
+      'Public Communication',
+    ],
+  },
 ];
 
-export const Projects: React.FC = () => {
+export const Projects = () => {
   return (
-    <section id="projects" className="py-16 border-b border-[#6B1D2F]/20">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#6B1D2F] mb-2">
-            <BookOpen size={15} /> Academic & Professional Works
+    <section
+      id="projects"
+      className="border-b border-[#6B1D2F]/20 py-20 md:py-28"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end md:mb-12">
+          <div>
+            <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B1D2F]">
+              <BookOpen size={15} />
+              Academic & Professional Works
+            </p>
+
+            <h2 className="font-serif text-4xl font-medium tracking-tight text-[#2A1810] sm:text-5xl md:text-6xl">
+              Riset & Karya<span className="text-[#6B1D2F]">.</span>
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-black text-[#6B1D2F] uppercase">
-            RISET & KARYA
-          </h2>
+
+          <p className="max-w-sm text-sm leading-6 text-[#786B62]">
+            Rekam jejak penulisan ilmiah, publikasi jurnal, dan proyek riset
+            internasional.
+          </p>
         </div>
-        <p className="text-sm text-[#2A1810]/70 mt-4 md:mt-0 max-w-sm font-sans">
-          Rekam jejak penulisan karya ilmiah, publikasi jurnal, dan proyek riset internasional.
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {works.map((work, index) => (
-          <motion.article 
-            key={work.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="p-8 rounded-2xl bg-[#DFD5C6]/40 border border-[#6B1D2F]/20 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-widest bg-[#6B1D2F]/10 text-[#6B1D2F] px-3 py-1 rounded-full">
-                  {work.category}
-                </span>
-                <span className="text-xs font-serif font-bold text-[#6B1D2F]">{work.id}</span>
-              </div>
-
-              <h3 className="text-xl font-serif font-bold text-[#2A1810]">
-                {work.title}
-              </h3>
-
-              <p className="text-sm text-[#2A1810]/80 leading-relaxed font-sans">
-                {work.description}
-              </p>
-            </div>
-
-            <div className="pt-6 mt-6 border-t border-[#6B1D2F]/10">
-              <div className="flex flex-wrap gap-1.5">
-                {work.tags.map((tag, i) => (
-                  <span key={i} className="text-[11px] px-2.5 py-1 rounded-md bg-[#EAE3D9] text-[#6B1D2F] border border-[#6B1D2F]/20 font-medium">
-                    {tag}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {works.map((work, index) => (
+            <motion.article
+              key={work.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="group flex min-w-0 flex-col justify-between rounded-3xl border border-[#6B1D2F]/15 bg-[#F5F0E8] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#6B1D2F]/35 hover:shadow-lg sm:p-6 lg:p-7"
+            >
+              <div>
+                <div className="mb-6 flex items-start justify-between gap-3">
+                  <span className="max-w-[85%] rounded-full bg-[#6B1D2F]/10 px-3 py-1.5 text-[10px] font-semibold uppercase leading-5 tracking-wider text-[#6B1D2F]">
+                    {work.category}
                   </span>
-                ))}
+
+                  <span className="shrink-0 font-serif text-sm font-semibold text-[#6B1D2F]/60">
+                    {work.id}
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-xl font-semibold leading-snug text-[#2A1810] transition-colors group-hover:text-[#6B1D2F] sm:text-2xl">
+                  {work.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[#786B62]">
+                  {work.description}
+                </p>
               </div>
-            </div>
-          </motion.article>
-        ))}
-      </div>
+
+              <div className="mt-7 border-t border-[#6B1D2F]/15 pt-5">
+                <div className="flex flex-wrap gap-2">
+                  {work.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="max-w-full rounded-lg border border-[#6B1D2F]/15 bg-[#EAE3D9] px-2.5 py-1.5 text-[11px] font-medium leading-4 text-[#6B1D2F]"
+                      style={{ overflowWrap: 'anywhere' }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex items-center justify-between">
+                  <span className="text-xs text-[#786B62]">
+                    Selected work
+                  </span>
+                  <ArrowUpRight
+                    size={17}
+                    className="text-[#6B1D2F] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };
