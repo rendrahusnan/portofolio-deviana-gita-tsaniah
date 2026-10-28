@@ -396,7 +396,7 @@ export default function Hero() {
             <h1 className="font-serif text-5xl leading-[1.04] tracking-[-0.05em] text-[#F3E8D7] sm:text-6xl md:text-7xl xl:text-[5.7rem]">
               Deviana
               <span className="mt-2 block italic text-[#D4B277]">
-                Gita Tsaniah
+                Gita Tsaniah S.S
               </span>
             </h1>
 
